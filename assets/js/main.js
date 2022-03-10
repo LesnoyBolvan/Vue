@@ -67,39 +67,47 @@
 // })
 
 
-// var list = new Vue({
-//     el:'#list',
-//     data: {
-//         text:'',
-//         name:''
-//     },
-//     methods: {
-//         getName: function () {
-//             this.name = this.text
-//         }
-//     }
-// })
-
+var list = new Vue({
+    el:'#app-6',
+    data: {
+        hide:false,
+        text:'',
+        name:''
+    },
+    methods: {
+        getName: function () {
+            this.name = this.text
+            this.text='',
+            this.hide='true'
+        }
+    }
+})
 
 Vue.component('todo-item', {
     props:['todo'],
-    template:'<li>{{ todo.text }}</li>'
+    data: function() {
+        return {
+            line: false
+        }
+    },
+    template:'<li v-bind:class="{ lt: line, pointer: true }" @click="line=!line">{{ todo.text }}<button v-on:click="del">Удалить</button></li>'
 })
 
 var app6 = new Vue({
     el: '#list',
     data: {
-        groceryList: [
-            {id:0, text:'Овощи'},
-            {id:1, text:'Сыр'},
-            {id:2, text: 'Что там ещё люди едят?'}
-        ],
-        text:'',
+        food:'',
+        id:0,
+        groceryList: [],
     },
     methods: {
         getName: function(){
-            this.groceryList
-
+            this.groceryList.push({id:this.id++, text:this.food})
+            this.food=''
+        },
+        del: function(id){
+          this.$delete(groceryList, )
         }
     }
+    
 })

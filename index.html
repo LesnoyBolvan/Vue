@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Vue</title>
+    <link rel="stylesheet" href='assets/css/style.css'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="assets/js/vue.min.js"></script>
@@ -44,21 +45,17 @@
         <input v-model='message'>
     </div>-->
 
-    <div id="list">
-        <input v-model='name'>
-        <button v-on:click='getName'>Подтвердить</button>
-        <ol>
-            <todo-item 
-            v-for='item in groceryList'
-            v-bind:todo='item'
-            v-bind:key='item.id'>
-            </todo-item>
-        </ol>
-        <!-- <input type="text"> -->
-        <!-- <p>Вас зовут: {{ name }}</p> -->
+    <div id='app-6'>
+        <div v-bind:class="{hide}">
+            <input v-model='text'>
+            <button v-on:click='getName'>Подтвердить имя</button>
+        </div>
+        <h3>Вас зовут: {{name}}</h3>
     </div>
 
-    <!-- <div id="app-6">
+    <div id="list">
+        <input v-model='food'>
+        <button v-on:click='getName'>Добавить в список</button>
         <ol>
             <todo-item 
             v-for='item in groceryList'
@@ -66,7 +63,7 @@
             v-bind:key='item.id'>
             </todo-item>
         </ol>
-    </div>  -->
+    </div>
 
   
 </body>
