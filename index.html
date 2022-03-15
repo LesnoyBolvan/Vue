@@ -58,9 +58,11 @@
         <button v-on:click='getName'>Добавить в список</button>
         <ol>
             <todo-item 
-            v-for='item in groceryList'
+            v-for='(item, id) in groceryList'
             v-bind:todo='item'
-            v-bind:key='item.id'>
+            v-bind:key='item.id'
+            v-on:remove="groceryList.splice(id, 1)"
+            >
             </todo-item>
         </ol>
     </div>
