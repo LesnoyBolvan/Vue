@@ -26,16 +26,19 @@
                 <select id="size" v-model="inputSize">
                     <option selected="" value="">--------</option>
                     <option>3</option>
+                    <option>4</option>
                     <option>5</option>
+                    <option>6</option>
                     <option>10</option>
                 </select>
                 <button @click="setField">Отправить</button>
             </div>
             
             <div class="game_field" v-show="field!=''">
-                <div class="row" v-for="(row, id) in field">
+                <div class="row" v-for="(row, id) in field"> 
                     <piece class="cell-style" v-for="cell in row" :field="cell" :key="cell.id" @click="selectCell(cell)">
-                        
+                        {{cell.symbol}}
+                    </piece>
                 </div>
             </div>
                 
