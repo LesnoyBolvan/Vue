@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fishes</title>
+    <link rel="stylesheet" href='assets/css/style.css'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="assets/js/vue.min.js"></script>
+    <script defer src="assets/js/main.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div id="fishes">
+            <div class="settings" v-if="!username">
+                <label for="playername">Введите имя игрока</label>
+                <input type="text" v-model="inputName" id="playername">
+                <button @click="start">Начать</button>
+            </div>
+            <div class="game" v-if="game">
+                <h4>Имя: {{username}}</h4>
+                <h4>Таймер: {{time}}</h4>
+                <h2>Счёт: {{score}}</h2>
+            </div>
+            <div v-show="game" class="field">
+                <div v-for="(fish, index) in fishes">
+                    <div class="fish" :style="{left: fish.left + 'px', top: fish.top + 'px'}">
+                        <img :style="{width: fish.width + 'px', height: fish.height + 'px'}" :class="{'turn' : fish.turn}"
+                             :src="fish.img" @click="takeFish(index);">
+
+                    </div>
+
+                </div>
+
+
+        </div>
+
+    </div>
+    
+
+  
+</body>
+
+</html>
