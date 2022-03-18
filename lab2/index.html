@@ -16,12 +16,12 @@
     <div class="container">
         <div id="ticTacToe">
             <h1>Крестики нолики</h1>
-            <div class="settings" v-if="!game">
+            <div class="settings" v-if="!curPlayer">
                 <label for="playername">Введите имя {{players.length + 1}} игрока</label>
                 <input type="text" v-model="inputName" id="playername">
                 <button @click="setPlayers">Сохранить</button>
             </div>
-            <div class="settings">
+            <div class="settings" v-if="!size">
                 <label for="size">Input board size</label>
                 <select id="size" v-model="inputSize">
                     <option selected="" value="">--------</option>
@@ -33,7 +33,7 @@
                 </select>
                 <button @click="setField">Отправить</button>
             </div>
-            
+            <h3 v-if="size">{{playInfo}}</h3>
             <div class="game_field" v-show="field!=''">
                 <div class="row" v-for="(row, id) in field"> 
                     <piece class="cell-style" v-for="cell in row" :field="cell" :key="cell.id" @click="selectCell(cell)">

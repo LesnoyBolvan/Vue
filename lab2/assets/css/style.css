@@ -3,11 +3,30 @@ body {
     padding: 0;
 }
 
+#ticTacToe{
+    text-align: center;
+}
+.settings {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-width: 300px;
+    min-height: 150px;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .game_field {
     border: 2px solid black;
     display: inline-block;
     justify-content: space-around;
     flex-direction: column;
+    align-items: center;
 }
 
 .row {
