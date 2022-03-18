@@ -28,8 +28,7 @@
             <div v-show="game" class="field">
                 <div v-for="(fish, index) in fishes">
                     <div class="fish" :style="{left: fish.left + 'px', top: fish.top + 'px'}">
-                        <img :style="{width: fish.width + 'px', height: fish.height + 'px'}" :class="{'turn' : fish.turn}"
-                             :src="fish.img" @click="takeFish(index);">
+                        <img :style="{width: fish.width + 'px', height: fish.height + 'px'}" :class="{'turn' : fish.turn}" :src="fish.img" @click="takeFish(index);">
 
                     </div>
 
@@ -39,9 +38,9 @@
         </div>
 
     </div>
-    
 
-  
+
+
 </body>
 
 </html>
