@@ -1,0 +1,18 @@
+
+
+.field {
+    width: 1000px;
+    height: 575px;
+    background-image: url("../img/бэк.jpg") ;
+    position: relative;
+}
+
+.fish{
+    position: absolute;
+    cursor: pointer;
+}
+
+.turn{
+    transform: scaleX(-1);
+    transition: 0.3s;
+}

@@ -7,9 +7,9 @@ var list = new Vue({
     },
     methods: {
         getName: function () {
-            this.name = this.text
-            this.text='',
-            this.hide='true'
+            this.name = this.text;
+            this.text='';
+            this.hide='true';
         }
     }
 })
@@ -18,7 +18,7 @@ Vue.component('todo-item', {
     props:['todo'],
     data: function() {
         return {
-            line: false
+            line: false;
         }
     },
     template:`<li v-bind:class="{ lt: line, pointer: true }" @click="line=true">{{ todo.text }}<button @click="$emit('remove')">X</button></li>`
@@ -33,8 +33,8 @@ var app6 = new Vue({
     },
     methods: {
         getName: function(){
-            this.groceryList.push({id:this.id++, text:this.food})
-            this.food=''
+            this.groceryList.push({id:this.id++, text:this.food});
+            this.food='';
         },
     }
 })
