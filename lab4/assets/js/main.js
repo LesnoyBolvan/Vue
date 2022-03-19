@@ -146,7 +146,7 @@ Vue.component('todo-record', {
         }
     },
     methods: {
-        
+
     },
 
     template: ''
