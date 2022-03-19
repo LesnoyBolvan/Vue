@@ -17,7 +17,11 @@
         <div id="fishes">
             <div class="settings" v-if="!username">
                 <label for="playername">Введите имя игрока</label>
+<<<<<<< HEAD
                 <input type="text" v-model.lazy="username" id="playername">
+=======
+                <input type="text" v-model="inputName" id="playername">
+>>>>>>> d2f4953aa3129345c1bf690f1fd1af5bbc6d0838
                 <button @click="start">Начать</button>
             </div>
             <div class="game" v-if="game">

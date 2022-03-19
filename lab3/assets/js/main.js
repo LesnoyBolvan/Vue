@@ -13,10 +13,25 @@ var app = new Vue({
 
     methods: {
         start: function () {
+<<<<<<< HEAD
+=======
+            this.setPlayer();
+>>>>>>> d2f4953aa3129345c1bf690f1fd1af5bbc6d0838
             this.game = true;
             this.timer();
         },
 
+<<<<<<< HEAD
+=======
+
+        setPlayer: function () {
+            if (this.inputName !== '') {
+                this.username = this.inputName
+                this.inputName = '';
+            }
+        },
+
+>>>>>>> d2f4953aa3129345c1bf690f1fd1af5bbc6d0838
         timer: function () {
             let interval = setInterval(() => {
                 this.time--;
