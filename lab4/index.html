@@ -15,23 +15,28 @@
 
 <body>
 <div class="container">
-    <div id="todo" class="col-6 py-4 mx-auto">
-        <div class="add-record">
+    <div id="app" class="col-8 py-4 mx-auto">
+        <div class="add-record" >
+
             <div class="form-container d-flex flex-column ">
-                <h1 class="text-center">Блокнот</h1>
-                <h2 class="text-center">Добавить запись</h2>
-                <div class="col">
+                <h2 class="text-center">Добавить новую запись</h2>
+                <div class="col-12">
                     <label class="form-label">Заголовок</label>
-                    <input type="text" class="form-control  ps-3 py-1" v-model="title">
+                    <input type="text" class="form-control py-1" v-model="title">
                 </div>
                 <div class="text-center" style="margin-top: 30px;">
-                    <button class="btn btn-primary" style="padding: 5px 40px" @click="addRecord">
+                    <button class="btn btn-primary bt-md ps-5 pe-5" @click="addRecord">
                         Создать
                     </button>
                 </div>
             </div>
-        </div>
 
+            <div class="todos">
+                <todo-list v-for="todoList in records" :list="todoList" :list_index="todoList.id"
+                           :key="todoList">
+                </todo-list>
+            </div>
+        </div>
     </div>
 </div>
 
