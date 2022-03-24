@@ -41,7 +41,7 @@ Vue.component('todo-list', {
         
         <div class=" border-bottom p-3">
             <div class="input-group">
-                <input type="text" class="form-control border-0 fs-5 shadow-none" placeholder="Add new" v-model.lazy="newTask">
+                <input type="text" class="form-control border-0 fs-5 shadow-none" placeholder="Добавить задачу" v-model.lazy="newTask">
                 <button class="btn btn-outline-primary bt-md" @click="addTask">Сохранить</button>
             </div>
         </div>
